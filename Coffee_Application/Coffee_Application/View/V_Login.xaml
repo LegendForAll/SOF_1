@@ -1,0 +1,84 @@
+﻿<Window x:Class="Coffee_Application.V_Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Coffee_Application"
+        xmlns:uc="clr-namespace:Coffee_Application.UControl"
+        mc:Ignorable="d"
+        Name="WD_Login"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="V_Login" Height="300" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <!--controlBar-->
+        <Grid Grid.Row="0">
+            <uc:UC_ControlBar Tag="{Binding Title, ElementName=WD_Login}"></uc:UC_ControlBar>
+        </Grid>
+        
+        <!--card main-->
+        <materialDesign:Card Grid.Row="1" Height="250" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid>
+                <!--TYPE-->
+                <Grid.Resources>
+                    <Style TargetType="Grid">
+                        <Setter Property="Margin" Value="15"></Setter>
+                    </Style>
+                </Grid.Resources>
+
+                <!--GROUP TEXTBOX-->
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--username-->
+                <Grid Grid.Row="0">
+                    <TextBox materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                </Grid>
+                <!--password-->
+                <Grid Grid.Row="1">
+                    <PasswordBox x:Name="FloatingPasswordBox"
+                                 materialDesign:HintAssist.Hint="Password"
+                                 Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                </Grid>
+
+                <!--GROUP BUTTON-->
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <!--login-->
+                    <Button Grid.Column="0"
+                            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                            Width="100"
+                            ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+                            Content="Login">
+                    </Button>
+                    <!--register-->
+                    <Button Grid.Column="1"
+                            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                            Width="100"
+                            ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+                            Content="Register">
+                    </Button>
+                </Grid>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Window>
